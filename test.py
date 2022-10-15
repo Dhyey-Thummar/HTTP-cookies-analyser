@@ -1,5 +1,5 @@
-from xmlrpc.client import Server
-import requests
+
+from time import sleep, time
 import prettytable as pt
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -8,17 +8,17 @@ DRIVER_PATH = "chromedriver_win32/chromedriver.exe"
 s = Service(DRIVER_PATH)
 options = webdriver.ChromeOptions()
 options.binary_location = r"C:/Program Files\BraveSoftware\Brave-Browser\Application\brave.exe"
-options.add_argument(
-    "--user-data-dir=C:\\Users\\dhyey\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default")
-options.add_argument("--profile-directory=Default")
-# options.headless = True
+# options.add_argument(
+#     "--user-data-dir=C:\\Users\\dhyey\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default")
+# options.add_argument("--profile-directory=Default")
+options.headless = True
 driver = webdriver.Chrome(options=options, service=s)
 
 
-def getAllParams(chromedriver, URL):
-    chromedriver.get(url=URL)
-    cookies = chromedriver.get_cookies()
-    print(cookies)
+def getAllParams(driver, URL):
+    driver.get(url=URL)
+    cookies = driver.get_cookies()
+    # print(cookies)
     params = {'name': [], 'value': [], 'domain': [], 'path': [],
               'expires': [], 'httpOnly': [], 'secure': [], 'sameSite': []}
 
@@ -33,7 +33,7 @@ def getAllParams(chromedriver, URL):
         params['secure'].append(i['secure'])
         params['sameSite'].append(
             i['sameSite']) if 'sameSite' in i else params['sameSite'].append('')
-        chromedriver.quit()
+    driver.quit()
     return params
 
 
@@ -54,7 +54,7 @@ def printCookieTable(params, url):
 
 
 if __name__ == '__main__':
-    # url = input('Enter URL: ')
-    url = 'https://ims.iitgn.ac.in/student/RequestStatusView.aspx'
+    url = input('Enter URL: ')
+    # url = 'https://ims.iitgn.ac.in/student/RequestStatusView.aspx'
     params = getAllParams(driver, url)
     printCookieTable(params, url)
