@@ -1,5 +1,5 @@
-
-from time import sleep, time
+import os
+from webbrowser import get
 import prettytable as pt
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -11,50 +11,73 @@ options.binary_location = r"C:/Program Files\BraveSoftware\Brave-Browser\Applica
 # options.add_argument(
 #     "--user-data-dir=C:\\Users\\dhyey\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default")
 # options.add_argument("--profile-directory=Default")
+options.add_argument("--log-level=3")
 options.headless = True
 driver = webdriver.Chrome(options=options, service=s)
 
+PATH_TO_URLS = "URLS.txt"
 
-def getAllParams(driver, URL):
-    driver.get(url=URL)
-    cookies = driver.get_cookies()
+
+def getAllurls(path):
+    with open(path, 'r') as f:
+        urls = f.readlines()
+    urls = [url.strip() for url in urls]
+    return urls
+
+
+def getAllParams(driver, urls):
+    cookies = []
+    for url in urls:
+        driver.get(url=url)
+        cookies.append(driver.get_cookies())
+        driver.implicitly_wait(5)
     # print(cookies)
-    params = {'name': [], 'value': [], 'domain': [], 'path': [],
-              'expires': [], 'httpOnly': [], 'secure': [], 'sameSite': []}
+    paramList = []
+    for cookie in cookies:
+        params = {'name': [], 'value': [], 'domain': [], 'path': [],
+                  'expires': [], 'httpOnly': [], 'secure': [], 'sameSite': []}
+        for i in cookie:
+            params['name'].append(i['name'])
+            params['value'].append(i['value'])
+            params['domain'].append(i['domain'])
+            params['path'].append(i['path'])
+            params['expires'].append(
+                i['expiry']) if 'expiry' in i else params['expires'].append(None)
+            params['httpOnly'].append(i['httpOnly'])
+            params['secure'].append(i['secure'])
+            params['sameSite'].append(
+                i['sameSite']) if 'sameSite' in i else params['sameSite'].append('')
+        paramList.append(params)
 
-    for i in cookies:
-        params['name'].append(i['name'])
-        params['value'].append(i['value'])
-        params['domain'].append(i['domain'])
-        params['path'].append(i['path'])
-        params['expires'].append(
-            i['expiry']) if 'expiry' in i else params['expires'].append(None)
-        params['httpOnly'].append(i['httpOnly'])
-        params['secure'].append(i['secure'])
-        params['sameSite'].append(
-            i['sameSite']) if 'sameSite' in i else params['sameSite'].append('')
-    driver.quit()
-    return params
+    return paramList
 
 
-def printCookieTable(params, url):
-    table = pt.PrettyTable()
-    table.title = 'Cookies for: ' + url
-    table.field_names = ['Name', 'Value', 'Domain',
-                         'Path', 'Expires', 'HttpOnly', 'Secure', 'SameSite']
-    table.align = 'l'
-    table.max_width = 40
-    for i in range(len(params['name'])):
-        table.add_row([params['name'][i], params['value'][i], params['domain'][i], params['path'][i],
-                      params['expires'][i], params['httpOnly'][i], params['secure'][i], params['sameSite'][i]])
+pathOutput = "output.txt"
 
-    with open('cookies.txt', 'w') as f:
-        f.write(table.get_string())
-    print(table)
+
+def printCookieTable(paramList, urls):
+    if os.path.exists(pathOutput):
+        os.remove(pathOutput)
+    for i in range(len(paramList)):
+        params = paramList[i]
+        table = pt.PrettyTable()
+        table.title = 'Cookies for: ' + urls[i]
+        table.field_names = ['Name', 'Value', 'Domain',
+                             'Path', 'Expires', 'HttpOnly', 'Secure', 'SameSite']
+        table.align = 'l'
+        table.max_width = 40
+        for i in range(len(params['name'])):
+            table.add_row([params['name'][i], params['value'][i], params['domain'][i], params['path'][i],
+                          params['expires'][i], params['httpOnly'][i], params['secure'][i], params['sameSite'][i]])
+
+        with open(pathOutput, 'a') as f:
+            f.write(table.get_string())
+            f.write('\n\n')
+        print(table)
+        print()
 
 
 if __name__ == '__main__':
-    url = input('Enter URL: ')
-    # url = 'https://ims.iitgn.ac.in/student/RequestStatusView.aspx'
-    params = getAllParams(driver, url)
-    printCookieTable(params, url)
+    urls = getAllurls(PATH_TO_URLS)
+    params = getAllParams(driver, urls)
+    printCookieTable(params, urls)

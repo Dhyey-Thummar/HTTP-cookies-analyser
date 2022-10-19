@@ -32,7 +32,7 @@ def printCookieTable(params, url):
     table.align = 'l'
     table.max_width = 50
     for i in range(len(params['name'])):
-        table.add_row([params['name'][i], params['value'][i], params['domain'][i], params['path'][i],
+        table.add_row([params['name'][i], params['Dvalue'][i], params['domain'][i], params['path'][i],
                       params['expires'][i], params['httpOnly'][i], params['secure'][i], params['sameSite'][i]])
 
     with open('cookies.txt', 'w') as f:
@@ -44,3 +44,4 @@ if __name__ == '__main__':
     url = input('Enter URL: ')
     params = getAllParams(url)
     printCookieTable(params, url)
+
