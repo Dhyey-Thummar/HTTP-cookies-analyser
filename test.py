@@ -1,5 +1,4 @@
 import os
-from webbrowser import get
 import prettytable as pt
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
@@ -30,7 +29,7 @@ def getAllParams(driver, urls):
     for url in urls:
         driver.get(url=url)
         cookies.append(driver.get_cookies())
-        driver.implicitly_wait(5)
+        driver.implicitly_wait(3)
     # print(cookies)
     paramList = []
     for cookie in cookies:

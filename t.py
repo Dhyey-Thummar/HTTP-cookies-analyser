@@ -1,4 +1,3 @@
-from itertools import dropwhile
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 
@@ -11,12 +10,9 @@ options.binary_location = r"C:/Program Files\BraveSoftware\Brave-Browser\Applica
 # options.add_argument(
 #     "--user-data-dir=C:\\Users\\dhyey\\AppData\\Local\\BraveSoftware\\Brave-Browser\\User Data\\Default")
 # options.add_argument("--profile-directory=Default")
-# options.headless = True
+options.headless = True
 driver = webdriver.Chrome(options=options, service=s)
 
 driver.get(url=url[0])
 cookies = driver.get_cookies()
 print(cookies)
-driver.get(url=url[1])
-print(driver.get_cookies())
-driver.quit()
