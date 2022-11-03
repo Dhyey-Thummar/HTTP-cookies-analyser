@@ -14,5 +14,10 @@ options.headless = True
 driver = webdriver.Chrome(options=options, service=s)
 
 driver.get(url=url[0])
+driver.execute_cdp_cmd('Performance.enable', {})
+t = driver.execute_cdp_cmd('Performance.getMetrics', {})
+
+print(t)
+driver.quit()
 cookies = driver.get_cookies()
 print(cookies)

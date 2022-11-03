@@ -2,6 +2,11 @@ import os
 import prettytable as pt
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
+import pandas as pd
+
+pathOutput = "output.txt"
+pathExcel = "cookie-db.xlsx"
+PATH_TO_URLS = "URLS.txt"
 
 DRIVER_PATH = "chromedriver_win32/chromedriver.exe"
 s = Service(DRIVER_PATH)
@@ -14,8 +19,6 @@ options.add_argument("--log-level=3")
 options.headless = True
 driver = webdriver.Chrome(options=options, service=s)
 
-PATH_TO_URLS = "URLS.txt"
-
 
 def getAllurls(path):
     with open(path, 'r') as f:
@@ -27,13 +30,18 @@ def getAllurls(path):
 def getAllParams(driver, urls):
     cookies = []
     for url in urls:
-        driver.get(url=url)
-        cookies.append(driver.get_cookies())
-        driver.implicitly_wait(3)
+        print('Getting cookies for: ' + url)
+        try:
+            driver.get(url=url)
+            cookies.append(driver.get_cookies())
+            driver.implicitly_wait(3)
+        except Exception as e:
+            print(e)
     # print(cookies)
     paramList = []
+    c = 0
     for cookie in cookies:
-        params = {'name': [], 'value': [], 'domain': [], 'path': [],
+        params = {'url': urls[c], 'name': [], 'value': [], 'domain': [], 'path': [],
                   'expires': [], 'httpOnly': [], 'secure': [], 'sameSite': []}
         for i in cookie:
             params['name'].append(i['name'])
@@ -47,11 +55,9 @@ def getAllParams(driver, urls):
             params['sameSite'].append(
                 i['sameSite']) if 'sameSite' in i else params['sameSite'].append('')
         paramList.append(params)
+        c += 1
 
     return paramList
-
-
-pathOutput = "output.txt"
 
 
 def printCookieTable(paramList, urls):
@@ -76,7 +82,19 @@ def printCookieTable(paramList, urls):
         print()
 
 
+def SaveToExcel(paramList, urls):
+    if os.path.exists(pathExcel):
+        os.remove(pathExcel)
+    df_main = pd.DataFrame()
+    for i in range(len(paramList)):
+        params = paramList[i]
+        df = pd.DataFrame(params)
+        df_main = pd.concat([df_main, df], ignore_index=True)
+    df_main.to_excel(pathExcel, index=False)
+
+
 if __name__ == '__main__':
     urls = getAllurls(PATH_TO_URLS)
     params = getAllParams(driver, urls)
-    printCookieTable(params, urls)
+    # printCookieTable(params, urls)
+    SaveToExcel(params, urls)

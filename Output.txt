@@ -3,58 +3,45 @@
 +-----------------+------------------------------------------+---------------+------+------------+----------+--------+----------+
 | Name            | Value                                    | Domain        | Path | Expires    | HttpOnly | Secure | SameSite |
 +-----------------+------------------------------------------+---------------+------+------------+----------+--------+----------+
-| session-token   | "q0tQV5kMxE8DDBP3CJeRm/hcYjs8wTHMSJJWPoK | .amazon.in    | /    | 1681790744 | False    | True   |          |
-|                 | 1e78FMAUqCvcrg8Lx8p2uh5nOq5sfq9Kgv03G+zV |               |      |            |          |        |          |
-|                 | iRu4/xa7orKRdUNPzqoj5cc0ITG5CCAgNl2LNAQY |               |      |            |          |        |          |
-|                 | jIvBcyp+Xfz0G4dDpGX8SrUTL746ckCyJ9bCNUiu |               |      |            |          |        |          |
-|                 | U6WNjXIJLO+828Au2EbKaMn17fv6LT3DPhOFVx5S |               |      |            |          |        |          |
-|                 | VL2RcdnF0CmhEKi6mPOdWSAiJ5A04js/A6fU="   |               |      |            |          |        |          |
-| ubid-acbin      | 259-9689849-4853538                      | .amazon.in    | /    | 1681790743 | False    | True   |          |
-| csm-hit         | tb:s-                                    | www.amazon.in | /    | 1681790742 | False    | False  |          |
-|                 | WA1BG44SZB4S1DYQ1WJG|1666238742291&t:166 |               |      |            |          |        |          |
-|                 | 6238742836&adb:adblk_no                  |               |      |            |          |        |          |
-| i18n-prefs      | INR                                      | .amazon.in    | /    | 1681790741 | False    | False  |          |
-| session-id-time | 2082787201l                              | .amazon.in    | /    | 1681790741 | False    | True   |          |
-| session-id      | 261-6655920-4019061                      | .amazon.in    | /    | 1681790741 | False    | True   |          |
+| ubid-acbin      | 257-3813636-3313965                      | .amazon.in    | /    | 1683041063 | False    | True   |          |
+| csm-hit         | tb:s-                                    | www.amazon.in | /    | 1668093863 | False    | False  |          |
+|                 | W80ZFHMF7027TNNEYYN3|1667489062956&t:166 |               |      |            |          |        |          |
+|                 | 7489063253&adb:adblk_no                  |               |      |            |          |        |          |
+| i18n-prefs      | INR                                      | .amazon.in    | /    | 1683041062 | False    | False  |          |
+| session-id-time | 2082787201l                              | .amazon.in    | /    | 1683041062 | False    | True   |          |
+| session-id      | 262-7805714-6894820                      | .amazon.in    | /    | 1683041062 | False    | True   |          |
 +-----------------+------------------------------------------+---------------+------+------------+----------+--------+----------+
+
++----------------------------------------------------------------------------------------------------------------------+
+|                                         Cookies for: https://www.google.in/                                          |
++--------+------------------------------------------+---------------+------+------------+----------+--------+----------+
+| Name   | Value                                    | Domain        | Path | Expires    | HttpOnly | Secure | SameSite |
++--------+------------------------------------------+---------------+------+------------+----------+--------+----------+
+| NID    | 511=ogI1a3rVOdndz6JG3pJPB881nYPi0s4ny_ZN | .google.co.in | /    | 1683041065 | True     | False  |          |
+|        | fvuOZZb8lm4tIraTLkQWmW-                  |               |      |            |          |        |          |
+|        | f6E56CmseOIreVL2RX6Q9em6ZDNNiVFjKIr6ukbD |               |      |            |          |        |          |
+|        | ELUZKobLMRjTpGlA5sdqu-                   |               |      |            |          |        |          |
+|        | Dz8MBi8QckE6fPlL0L9s9-pVeTeXacW9_wwV-    |               |      |            |          |        |          |
+|        | ffvyrokasL820                            |               |      |            |          |        |          |
+| OGPC   | 19027681-1:                              | .google.co.in | /    | 1668093865 | False    | False  |          |
+| AEC    | AakniGMnx_xE-ETEHAPrz91mOfHp9nx3OWNIrbtX | .google.co.in | /    | 1683041064 | True     | True   | Lax      |
+|        | z9h7XtmeAVprIszw6SY                      |               |      |            |          |        |          |
+| 1P_JAR | 2022-11-03-15                            | .google.co.in | /    | 1670081065 | False    | True   | None     |
++--------+------------------------------------------+---------------+------+------------+----------+--------+----------+
 
 +---------------------------------------------------------------------------------------------------------------------------------+
 |                                              Cookies for: https://www.youtube.com/                                              |
 +--------------------+------------------------------------------+--------------+------+------------+----------+--------+----------+
 | Name               | Value                                    | Domain       | Path | Expires    | HttpOnly | Secure | SameSite |
 +--------------------+------------------------------------------+--------------+------+------------+----------+--------+----------+
-| PREF               | tz=Asia.Calcutta                         | .youtube.com | /    | 1681790746 | False    | True   |          |
-| VISITOR_INFO1_LIVE | LNF_Oqz35JU                              | .youtube.com | /    | 1681790744 | True     | True   | None     |
-| CONSISTENCY        | APAR8nuVQtdzXiFsvemeLQdiYccFlCLTvDAZlEgx | .youtube.com | /    | 1666239348 | False    | True   |          |
-|                    | vJ5H4hntIaFjAQF7pXRWdOhRG7W90MX0HdQcK10m |              |      |            |          |        |          |
-|                    | Ds9VIL1rKjG8LfV3ISD-LhzLUFmN9rvc57_dznt2 |              |      |            |          |        |          |
-|                    | 3YG9S3GMENkDeRTzbRQ_Qu1SL1RNzLY          |              |      |            |          |        |          |
-| YSC                | 5qdgn_DP34M                              | .youtube.com | /    | None       | True     | True   | None     |
-| GPS                | 1                                        | .youtube.com | /    | 1666240544 | True     | True   |          |
+| PREF               | tz=Asia.Calcutta                         | .youtube.com | /    | 1668093867 | False    | True   |          |
+| VISITOR_INFO1_LIVE | udNMERBrqPk                              | .youtube.com | /    | 1683041066 | True     | True   | None     |
+| CONSISTENCY        | APAR8nuwFQ8ujaRa_kdD9j-                  | .youtube.com | /    | 1667489668 | False    | True   |          |
+|                    | lpAb7Xlv0aPtwmUl2jBKUJwASYYxXRd0Yx167AN3 |              |      |            |          |        |          |
+|                    | 2Qunx2fWKSoxkQCEwz9kDVK9mjOoNYjbM6smAHsc |              |      |            |          |        |          |
+|                    | uAuDlDi9R_wNgdM0fr5-                     |              |      |            |          |        |          |
+|                    | xVE4dXmg3jyunx8zXssGFg0P_2H8             |              |      |            |          |        |          |
+| YSC                | O_LQkl_Bja8                              | .youtube.com | /    | None       | True     | True   | None     |
+| GPS                | 1                                        | .youtube.com | /    | 1667490866 | True     | True   |          |
 +--------------------+------------------------------------------+--------------+------+------------+----------+--------+----------+
-
-+--------------------------------------------------------------------------------------------------------------------+
-|                                        Cookies for: https://www.google.com/                                        |
-+--------+------------------------------------------+-------------+------+------------+----------+--------+----------+
-| Name   | Value                                    | Domain      | Path | Expires    | HttpOnly | Secure | SameSite |
-+--------+------------------------------------------+-------------+------+------------+----------+--------+----------+
-| OGPC   | 19027681-1:                              | .google.com | /    | 1668830750 | False    | False  |          |
-| NID    | 511=jIDresTziv29PeTPRo9ghnR2Ya5zbkQSOs5y | .google.com | /    | 1681790750 | True     | False  |          |
-|        | f3nZbox3drCusLvI_btLxkoDpewvQPAXbKVczcEU |             |      |            |          |        |          |
-|        | CJ-rDSbUJ-                               |             |      |            |          |        |          |
-|        | JvuXyHt1Jeycn8lqlfaq4p2J0sdDkHS-dmsgKSU- |             |      |            |          |        |          |
-|        | HpEwT2xd5uODulk0iPMpVRly-                |             |      |            |          |        |          |
-|        | d91gItDOb0M6ZJJ3j2-c                     |             |      |            |          |        |          |
-| AEC    | AakniGOXwSLz6wtq8_UMEmsBUTjxxej1sldBVGui | .google.com | /    | 1681790749 | True     | True   | Lax      |
-|        | Q9T1wOR_FEzAqsnZpuE                      |             |      |            |          |        |          |
-| 1P_JAR | 2022-10-20-04                            | .google.com | /    | 1668830750 | False    | True   | None     |
-+--------+------------------------------------------+-------------+------+------------+----------+--------+----------+
-
-+---------------------------------------------------------------------------------------------------------------------+
-|                                       Cookies for: https://stackoverflow.com/                                       |
-+------+--------------------------------------+--------------------+------+------------+----------+--------+----------+
-| Name | Value                                | Domain             | Path | Expires    | HttpOnly | Secure | SameSite |
-+------+--------------------------------------+--------------------+------+------------+----------+--------+----------+
-| prov | 87ce2bef-c840-338d-966d-05d871c8027a | .stackoverflow.com | /    | 1681790751 | True     | False  |          |
-+------+--------------------------------------+--------------------+------+------------+----------+--------+----------+
 
