@@ -1,0 +1,13 @@
++------------------------------------------------------------------------------------------------------------------------------+
+|                                             Cookies for: https://www.google.com/                                             |
++--------+----------------------------------------------------+-------------+------+------------+----------+--------+----------+
+| Name   | Value                                              | Domain      | Path | Expires    | HttpOnly | Secure | SameSite |
++--------+----------------------------------------------------+-------------+------+------------+----------+--------+----------+
+| 1P_JAR | 2022-11-27-16                                      | .google.com | /    | 1672156814 | False    | False  | False    |
+| AEC    | AakniGMxr1ii8Ny-                                   | .google.com | /    | 1685116814 | True     | False  | True     |
+|        | XkQY6BVvr3oViVEvonw20TMG1t3Ry4QGPiUp_ZHuaw         |             |      |            |          |        |          |
+| NID    | 511=AptGig_TX1JmkT2W2Noy0z3DmIvB_56piGOQJjFBmCPywf | .google.com | /    | 1685376014 | True     | False  | False    |
+|        | IksiY9huEvkGhDyaeJ3DBGQuRpdY1Z5mpFiKDvjTX68Gv1n15T |             |      |            |          |        |          |
+|        | fojTfUKJ8mnX_fTnoJ9p4pRq3j5-                       |             |      |            |          |        |          |
+|        | jaZ1ohkvEWbvaalhjWtgBZKQSrUBfO0uIBvalgIscWi4NYE    |             |      |            |          |        |          |
++--------+----------------------------------------------------+-------------+------+------------+----------+--------+----------+

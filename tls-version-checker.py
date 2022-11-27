@@ -28,19 +28,14 @@ async def parse_tls(path):
     tls_versions.sort(key=lambda x: x[1], reverse=True)
     return tls_versions, set_v
 
-
 async def run_tshark(url, path):
-    subprocess.Popen("tshark -Y tls > " + path, shell=True,
-                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.Popen("tshark -Y tls > " + path, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     await asyncio.sleep(3)
-    subprocess.Popen("curl " + url, shell=True,
-                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.Popen("curl " + url, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     await asyncio.sleep(3)
-    subprocess.Popen("pkill tshark", shell=True,
-                     stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    subprocess.Popen("pkill tshark", shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
     await asyncio.sleep(1)
     return
-
 
 async def get_TLS_info(url, path):
     await run_tshark(url, path)
