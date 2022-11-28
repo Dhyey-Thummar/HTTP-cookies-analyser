@@ -48,3 +48,7 @@ except KeyboardInterrupt:							#press ctrl+C to exit execution
 	reverse_attack(victim_ip,gateway_ip)
 
 	print("Attack stopped")
+
+#References - https://www.programcreek.com/python/example/103599/scapy.all.ARP
+#	    - https://www.geeksforgeeks.org/python-how-to-create-an-arp-spoofer-using-scapy/
+#	    - https://mpostument.medium.com/arp-spoofer-with-python-and-scapy-b848d7bc15b3
