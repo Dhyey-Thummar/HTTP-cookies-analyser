@@ -20,6 +20,8 @@ This is a simple tool to analyse HTTP cookies. It is written in Python.
 
 - Run the `tls-version-checker.py` script by `sudo python tls-version-checker.py`. [ Note: The script needs to run in Linux environment and requires `tshark` module to be installed. Also, needs to be run as root because it uses the `socket` module. ]
 
+- Run the 'ARP_Spoofer.py' script by 'python ARP_Spoofer.py' command and check change (or no change) in ARP Table entries using 'arp -a' command
+
 ## Dependencies
 
 - Python 3
@@ -28,3 +30,4 @@ This is a simple tool to analyse HTTP cookies. It is written in Python.
 - Pandas
 - PrettyTable
 - Tshark (for `tls-version-checker.py`)
+- Scapy (for 'ARP_Spoofer.py')
