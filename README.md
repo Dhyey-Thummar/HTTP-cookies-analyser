@@ -32,4 +32,4 @@ This is a simple tool to analyse HTTP cookies. It is written in Python.
 - Pandas
 - PrettyTable
 - Tshark (for `tls-version-checker.py`)
-- Scapy (for 'ARP_Spoofer.py')
+- Scapy (for `ARP_Spoofer.py`)
